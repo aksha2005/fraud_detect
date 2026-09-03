@@ -1,0 +1,44 @@
+{
+  "entities": {
+    "internshala": {
+      "display_name": "Internshala",
+      "official_domains": ["internshala.com"],
+      "fee_policy": "Internshala never charges a registration fee, security deposit, or training fee for internships.",
+      "fee_policy_label": "Fee request is a guaranteed scam",
+      "never_contacts_via": ["whatsapp", "telegram", "@gmail.com", "@yahoo.com"],
+      "keywords": ["internshala"]
+    },
+    "nsp": {
+      "display_name": "National Scholarship Portal (NSP)",
+      "official_domains": ["scholarships.gov.in"],
+      "fee_policy": "Government scholarship schemes never ask for a processing fee or deposit to release funds.",
+      "fee_policy_label": "Government fee request is a scam",
+      "never_contacts_via": ["whatsapp", "telegram", "bit.ly", "tinyurl.com"],
+      "keywords": ["nsp", "national scholarship portal", "pm scholarship", "scholarship"]
+    },
+    "sbi": {
+      "display_name": "State Bank of India (SBI)",
+      "official_domains": ["sbi.co.in", "onlinesbi.sbi"],
+      "fee_policy": "Banks never ask for money or OTP to unblock your account.",
+      "fee_policy_label": "OTP/payment request for KYC is a scam",
+      "never_contacts_via": ["whatsapp", "@gmail.com", "bit.ly", "tinyurl.com"],
+      "keywords": ["sbi", "state bank of india"]
+    },
+    "hdfc": {
+      "display_name": "HDFC Bank",
+      "official_domains": ["hdfcbank.com"],
+      "fee_policy": "Banks never ask for money or OTP to unblock your account.",
+      "fee_policy_label": "OTP/payment request for KYC is a scam",
+      "never_contacts_via": ["whatsapp", "@gmail.com", "bit.ly", "tinyurl.com"],
+      "keywords": ["hdfc"]
+    },
+    "tcs": {
+      "display_name": "TCS (Tata Consultancy Services)",
+      "official_domains": ["tcs.com"],
+      "fee_policy": "TCS does not charge any fee at any stage of the recruitment process.",
+      "fee_policy_label": "Recruitment fee is a scam",
+      "never_contacts_via": ["whatsapp", "telegram", "@gmail.com"],
+      "keywords": ["tcs", "tata consultancy services"]
+    }
+  }
+}
