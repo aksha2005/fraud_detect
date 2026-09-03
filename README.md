@@ -3,7 +3,7 @@
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.28%2B-FF4B4B.svg)](https://streamlit.io/)
 [![FAISS](https://img.shields.io/badge/FAISS-Vector%20Search-00599C.svg)](https://github.com/facebookresearch/faiss)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 
 > **Campus Fraud Shield is an AI-powered, 100% offline cybersecurity tool designed to protect college students from campus-targeted scams, fake internships, scholarship fraud, and malicious links.**
 
