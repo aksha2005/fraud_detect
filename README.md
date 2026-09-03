@@ -1,7 +1,6 @@
-# Campus Fraud Shield 🛡️
+#  Fraud Shield 🛡️
 
-Detects scam messages targeting college students — internship fees, fake scholarships,
-OTP fraud, lottery scams — using a 4-engine ensemble running 100% offline.
+Campus Fraud Shield is an AI-powered, 100% offline cybersecurity tool designed to protect college students from campus-targeted scams, fake internships, scholarship fraud, and malicious links.
 
 ---
 
