@@ -1,110 +1,41 @@
-#  Fraud Shield 🛡️
+# 🛡️ Campus Fraud Shield
 
-Campus Fraud Shield is an AI-powered, 100% offline cybersecurity tool designed to protect college students from campus-targeted scams, fake internships, scholarship fraud, and malicious links.
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.28%2B-FF4B4B.svg)](https://streamlit.io/)
+[![FAISS](https://img.shields.io/badge/FAISS-Vector%20Search-00599C.svg)](https://github.com/facebookresearch/faiss)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+> **Campus Fraud Shield is an AI-powered, 100% offline cybersecurity tool designed to protect college students from campus-targeted scams, fake internships, scholarship fraud, and malicious links.**
 
 ---
 
-## System requirements
+## 📌 System Requirements
 
 | Resource | Minimum | Recommended |
-|----------|---------|-------------|
-| RAM | 4 GB | 8 GB |
-| Disk | 2 GB free | 4 GB |
-| CPU | Any modern | i5 / Ryzen 5+ |
-| GPU | Not required | — |
-| Internet | First run only | — |
+| :--- | :--- | :--- |
+| **RAM** | 4 GB | 8 GB |
+| **Disk** | 2 GB free | 4 GB |
+| **CPU** | Any modern CPU | i5 / Ryzen 5+ |
+| **GPU** | Not required | — |
+| **Internet** | First run only (to download local weights) | Completely Offline |
 
 ---
 
-## Setup (one time)
+## 🚀 Quick Start
 
 ```bash
-# 1. Clone / unzip the project
+# 1. Navigate to project folder
 cd campus_fraud_shield
 
-# 2. Create virtual environment
+# 2. Create & activate virtual environment
 python -m venv venv
-source venv/bin/activate        # Windows: venv\Scripts\activate
+source venv/bin/activate  # Windows: venv\Scripts\activate
 
 # 3. Install dependencies
 pip install -r requirements.txt
 
-# 4. Train the ML model (downloads ~80 MB model on first run, then offline)
+# 4. Train the ML model (downloads ~80 MB model once, runs offline after)
 python train/train_model.py
-```
 
----
-
-## Run
-
-```bash
+# 5. Launch the application
 streamlit run app.py
-```
-
-Open http://localhost:8501 in your browser.
-
----
-
-## Project structure
-
-```
-campus_fraud_shield/
-├── app.py                      # Streamlit frontend
-├── requirements.txt
-├── core/
-│   ├── ml_model.py             # SemanticScamClassifier (sentence-transformers)
-│   ├── history_engine.py       # FAISS: search + explain + cluster
-│   ├── campus_checker.py       # 4 expert domain checks (pure logic)
-│   ├── rules_engine.py         # Keyword / pattern rules
-│   ├── domain_checker.py       # URL / email domain analysis
-│   └── scorer.py               # Weighted ensemble (35/30/20/15)
-├── utils/
-│   └── action_advisor.py       # Action cards + complaint generator
-├── train/
-│   └── train_model.py          # Train & save SemanticScamClassifier
-├── data/
-│   └── campus_entities.json    # 22 Indian entities with fee/contact policies
-├── models/                     # Auto-created by train_model.py
-│   ├── semantic_classifier.pkl
-│   ├── training_embeddings.npy
-│   └── training_texts.json
-└── tests/
-    └── test_smoke.py           # Smoke tests (no ML needed)
-```
-
----
-
-## Score weights
-
-| Engine | Weight | What it checks |
-|--------|--------|----------------|
-| Rules engine | 35% | Keyword patterns, fee language, urgency, OTP |
-| Domain check | 30% | URLs, shortlinks, free-email senders |
-| Semantic AI | 20% | all-MiniLM-L6-v2 embeddings + LogisticRegression |
-| Community | 15% | FAISS similarity vs previously reported scams |
-
----
-
-## Running tests (no model needed)
-
-```bash
-python tests/test_smoke.py
-# or
-python -m pytest tests/
-```
-
----
-
-## Adding training data
-
-Edit `train/train_model.py` → `TRAINING_DATA` list.
-Each entry: `("message text", 1)` for scam, `("message text", 0)` for safe.
-Re-run `python train/train_model.py` after adding samples.
-
----
-
-## Entities covered
-
-Internshala · Naukri · LinkedIn · NSP · PM Scholarship · UGC · AICTE ·
-SBI · HDFC · ICICI · Paytm · PhonePe · Google Pay · IRCTC ·
-LetsIntern · Unstop · HackerEarth · Wipro · TCS · Infosys · Cognizant · Accenture
